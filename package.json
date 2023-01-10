@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "stylelint": "prettier \"**/*.css\" --fix"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -18,6 +19,12 @@
     "next": "13.1.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-prettier": "^2.0.0",
     "typescript": "4.9.4"
+  },
+  "devDependencies": {
+    "classnames": "^2.3.2",
+    "react-native-sound": "^0.11.2"
   }
 }

@@ -1,0 +1,46 @@
+.panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  color: var(--white);
+  background-color: var(--primary);
+  top: 87vh;
+  left: 2vw;
+  width: 10vw;
+  min-width: 50px;
+  min-height: 40px;
+  height: 10vh;
+  border: none;
+  transition: background-color 0.5s, min-width 0.5s, align-items 0.5s, top 0.5s,
+    height 0.5s, width 0.5s, opacity 0.5s 0.5s;
+  border-radius: 5vh;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.panel:hover {
+  display: grid;
+
+  grid-template-columns: repeat(5, 1fr);
+
+  width: 30vw;
+  min-width: 300px;
+}
+
+.normal {
+  height: 10vh;
+  top: 87vh;
+}
+
+.info {
+  display: inline-flexbox;
+  row-gap: 30px;
+  height: 50vh;
+  top: 47vh;
+}
+
+.infoblock {
+  grid-column: 1 / span 5;
+  justify-items: center;
+}
