@@ -1,12 +1,12 @@
 .button {
+  opacity: 0;
   padding: 10px;
   cursor: pointer;
   text-align: center;
   border: none;
   border-radius: 30%;
   font-size: 14px;
-  transition: all 0.2s;
-  min-height: 80px;
+  transition: all 0.5s;
 }
 
 .primary {
@@ -18,12 +18,15 @@
   background-color: var(--primary-hover);
 }
 
-
 .ghost {
-	color: var(--white);
-	background-color: var(--primary);
+  color: var(--white);
+  background-color: var(--primary);
 }
 
 .ghost:hover {
-	background-color: var(--primary-hover);
+  background-color: var(--primary-hover);
+}
+
+.active {
+  opacity: 1;
 }

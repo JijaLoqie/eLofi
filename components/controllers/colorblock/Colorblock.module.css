@@ -1,0 +1,5 @@
+.colorblock {
+  display: inline;
+  align-self: flex-start;
+  flex: 1 100%;
+}

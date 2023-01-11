@@ -3,6 +3,11 @@ import styles from "./Panel.module.css";
 import cn from "classnames";
 import { useEffect, useState } from "react";
 import { Htag } from "../Htag/Htag";
+import { Infoblock } from '../controllers/infoblock/Infoblock';
+import { Musicblock } from '../controllers/musicblock/Musicblock';
+import { Timerblock } from '../controllers/timerblock/Timerblock';
+import { Colorblock } from '../controllers/colorblock/Colorblock';
+import { Backblock } from '../controllers/backblock/Backblock';
 
 export const Panel = ({
 	children,
@@ -11,11 +16,23 @@ export const Panel = ({
 	...props
 }: PanelProps): JSX.Element => {
 	const [isHovered, setHovered] = useState<boolean>(false);
+	const [show, setShow] = useState(false)
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShow(true)
+    }, 100)
+
+    return () => clearTimeout(timeout)
+
+  }, [show])
 	if (!isHovered) {
 		return (
 			<div
 				onMouseEnter={() => setHovered(true)}
-				className={cn(styles.panel)}
+				className={cn(styles.panel, {
+					[styles.active] : show,
+				})}
 				{...props}
 			>
 				<div>eLofi</div>
@@ -38,59 +55,27 @@ export const Panel = ({
 			}}
 			className={cn(
 				styles.panel,
-				appearance != "normal" ? styles.info : styles.normal
+				appearance != "normal" ? styles.info : styles.normal, {
+					[styles.active] : show,
+				}
 			)}
 			{...props}
 		>
 			{
 				appearance == "info" ? (
-					<div className={styles.infoblock}>
-						<Htag tag="h1">
-							Made by <a href="https://github.com/JijaLoqie">JijaLoqie</a>
-						</Htag>
-						<div style={{ textAlign: `center` }}>
-							Hello! My name is Dima and I realy like creating new things related
-							to studying
-						</div>
-					</div>
+					<Infoblock/>
 				) : (appearance == "music") ? (
-					<div className={styles.infoblock}>
-						<Htag tag="h1">
-							Set up music as you like
-						</Htag>
-						<div style={{ textAlign: `center` }}>
-							Here you can change the music
-						</div>
-					</div>
+					<Musicblock/>
 				) : (appearance == "background") ? (
-					<div className={styles.infoblock}>
-						<Htag tag="h1">
-							Set up background as you like
-						</Htag>
-						<div style={{ textAlign: `center` }}>
-							Here you can change the background
-						</div>
-					</div>
+					<Backblock/>
 				) : (appearance == "color") ? (
-					<div className={styles.infoblock}>
-						<Htag tag="h1">
-							Set up color as you like
-						</Htag>
-						<div style={{ textAlign: `center` }}>
-							Here you can change the color
-						</div>
-					</div>
+					<Colorblock/>
 				) : (appearance == "timer") ? (
-					<div className={styles.infoblock}>
-						<Htag tag="h1">
-							Set up timer as you like
-						</Htag>
-						<div style={{ textAlign: `center` }}>
-							Here you can change the timer
-						</div>
-					</div>
+					<Timerblock/>
 				) : <></>}
+				<div className={styles.buttons}>
 			{children}
+			</div>
 		</div>
 	);
 };

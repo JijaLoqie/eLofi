@@ -5,6 +5,7 @@ export default function Home() {
 	const [background, setBackground] = useState("girl_study2.png");
 	const [currentMusic, setCurrentMusic] = useState("South.mp3");
 	const [backs, setBacks] = useState<string[]>([]);
+	const [musics, setMusics] = useState<string[]>([]);
 	const [contentAppearance, setContentAppearance] = useState("normal");
 	useEffect(() => {
 		setBacks((wasBacks) => [...wasBacks, "cowboy.png"]);
@@ -14,6 +15,8 @@ export default function Home() {
 		setBacks((wasBacks) => [...wasBacks, "magician1.png"]);
 		setBacks((wasBacks) => [...wasBacks, "magician2.png"]);
 		setBacks((wasBacks) => [...wasBacks, "magician3.png"]);
+
+		setMusics((wasMusic) => [...wasMusic, "South.mp3"]);
 	}, []);
 
 	const handleGoBack = () => {
