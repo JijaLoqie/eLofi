@@ -12,26 +12,28 @@ import { Backblock } from '../controllers/backblock/Backblock';
 export const Panel = ({
 	children,
 	appearance,
+	songList,
 	handleBack,
+	handlers,
 	...props
 }: PanelProps): JSX.Element => {
 	const [isHovered, setHovered] = useState<boolean>(false);
 	const [show, setShow] = useState(false)
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShow(true)
-    }, 100)
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			setShow(true)
+		}, 100)
 
-    return () => clearTimeout(timeout)
+		return () => clearTimeout(timeout)
 
-  }, [show])
+	}, [show])
 	if (!isHovered) {
 		return (
 			<div
 				onMouseEnter={() => setHovered(true)}
 				className={cn(styles.panel, {
-					[styles.active] : show,
+					[styles.active]: show,
 				})}
 				{...props}
 			>
@@ -40,41 +42,34 @@ export const Panel = ({
 		);
 	}
 
-	// return <div onMouseLeave={() => { handleBack(); setHovered(false); }} className={cn(styles.panel)} {...props}>
-	// 	<div className={styles.info}>
-	// 		<Htag tag='h1'>Made by <a href='https://github.com/JijaLoqie'>JijaLoqie</a></Htag>
-	// 		<p>Hello! My name is dima and I realy like creating new things related to studying</p>
-	// 	</div>
-	// 	{/* {children} */}
-	// </div>;
 	return (
 		<div
 			onMouseLeave={() => {
-				handleBack();
 				setHovered(false);
+				handleBack();
 			}}
 			className={cn(
 				styles.panel,
 				appearance != "normal" ? styles.info : styles.normal, {
-					[styles.active] : show,
-				}
+				[styles.active]: show,
+			}
 			)}
 			{...props}
 		>
 			{
 				appearance == "info" ? (
-					<Infoblock/>
+					<Infoblock />
 				) : (appearance == "music") ? (
-					<Musicblock/>
+					<Musicblock handleSetMusic={handlers.handleSetMusic} list={songList} />
 				) : (appearance == "background") ? (
-					<Backblock/>
+					<Backblock />
 				) : (appearance == "color") ? (
-					<Colorblock/>
+					<Colorblock />
 				) : (appearance == "timer") ? (
-					<Timerblock/>
+					<Timerblock />
 				) : <></>}
-				<div className={styles.buttons}>
-			{children}
+			<div className={styles.buttons}>
+				{children}
 			</div>
 		</div>
 	);

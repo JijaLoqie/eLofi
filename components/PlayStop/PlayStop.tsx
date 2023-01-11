@@ -8,7 +8,7 @@ export const PlayStop = ({ currentMusic }: PlayStopProps): JSX.Element => {
 	const [musicStop, setMusicStop] = useState(true);
 
 	const currentAudio = useRef<HTMLAudioElement | undefined>(
-		typeof Audio === "undefined" ? undefined : new Audio(`/sounds/${currentMusic}`)
+		typeof Audio === "undefined" ? undefined : new Audio(`${currentMusic}`)
 	);
 
 	function handleClickPlayStop() {
@@ -19,7 +19,6 @@ export const PlayStop = ({ currentMusic }: PlayStopProps): JSX.Element => {
 			currentAudio.current?.pause();
 			setMusicStop(true);
 		}
-		// setMusicStop(isStoped => !isStoped);
 	}
 
 	return (

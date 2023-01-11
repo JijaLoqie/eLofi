@@ -1,11 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { Button, Panel, PlayStop } from "../components";
 
 export default function Home() {
+
+
+
 	const [background, setBackground] = useState("girl_study2.png");
-	const [currentMusic, setCurrentMusic] = useState("South.mp3");
+	const [currentMusic, setCurrentMusic] = useState("/sounds/South.mp3");
 	const [backs, setBacks] = useState<string[]>([]);
-	const [musics, setMusics] = useState<string[]>([]);
+	const [musics, setMusics] = useState<
+		{ songName: string, artist: string, music: { cover: string, song: string } }[]
+	>([]);
 	const [contentAppearance, setContentAppearance] = useState("normal");
 	useEffect(() => {
 		setBacks((wasBacks) => [...wasBacks, "cowboy.png"]);
@@ -15,9 +20,13 @@ export default function Home() {
 		setBacks((wasBacks) => [...wasBacks, "magician1.png"]);
 		setBacks((wasBacks) => [...wasBacks, "magician2.png"]);
 		setBacks((wasBacks) => [...wasBacks, "magician3.png"]);
-
-		setMusics((wasMusic) => [...wasMusic, "South.mp3"]);
+		addNewMusic("South", "HXVRMXN", { cover: "/songCovers/south.jpg", song: "/sounds/South.mp3" });
+		addNewMusic("Madara", "HXVRMXN", { cover: "/songCovers/free-flow-flava-madara.jpg", song: "/sounds/free-flow-flava-madara.mp3" });
 	}, []);
+
+	const addNewMusic = (songName: string, artist: string, music: { cover: string, song: string }) => {
+		setMusics((wasMusics) => [...wasMusics, { songName, artist, music }])
+	}
 
 	const handleGoBack = () => {
 		console.log("Go back");
@@ -39,7 +48,7 @@ export default function Home() {
 	};
 	return (
 		<main style={{ backgroundImage: `url(/backs/${background})` }}>
-			<Panel appearance={contentAppearance} handleBack={handleGoBack}>
+			<Panel songList={musics} appearance={contentAppearance} handleBack={handleGoBack} handlers={{ handleSetMusic: addNewMusic }}>
 				<Button appearance="primary" onClick={() => handleInfo("info")}>
 					eLofi
 				</Button>
