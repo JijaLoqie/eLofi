@@ -1,9 +1,7 @@
 .playstop {
-  display: flex;
-  align-items: center;
+	display: flex;
+	align-items: center;
   justify-content: center;
-  color: var(--white);
-  background-color: var(--primary);
   position: absolute;
   top: 87vh;
   right: 2vw;
@@ -11,6 +9,7 @@
   min-height: 50px;
   width: 10vh;
   height: 10vh;
-  border: none;
-  border-radius: 50%;
+  border-radius: 100%;
+  transform: rotate(90deg);
 }
+

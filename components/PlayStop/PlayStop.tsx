@@ -3,6 +3,7 @@ import styles from './PlayStop.module.css';
 import cn from 'classnames';
 import { Button } from '../Button/Button';
 import { useEffect, useRef, useState } from 'react';
+import { ReactComponent as PlayButt } from "./Polygon.svg"
 
 export const PlayStop = ({ currentMusic }: PlayStopProps): JSX.Element => {
 	const [musicStop, setMusicStop] = useState(true);
@@ -23,12 +24,13 @@ export const PlayStop = ({ currentMusic }: PlayStopProps): JSX.Element => {
 		}
 		// setMusicStop(isStoped => !isStoped);
 	}
-	
+
 	return (
-	<Button appearance={(musicStop) ? "primary" : "ghost"} className={cn(
-        styles.playstop
-      )} onClick={handleClickPlayStop}> 
-		{(musicStop) ? "Play" : "Stop"}
-	</Button>
+		<Button appearance={(musicStop) ? "primary" : "ghost"} className={cn(
+			styles.playstop
+		)} onClick={handleClickPlayStop} style={{ borderRadius: `100%` }}>
+			{/* {(musicStop) ? "Play" : "Stop"} */}
+			<PlayButt />
+		</Button>
 	);
 };

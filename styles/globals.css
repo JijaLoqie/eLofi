@@ -2,6 +2,8 @@
   --primary: black;
   --primary-hover: rgb(149, 55, 55);
   --white: white;
+  --ghost-hover: black;
+  --ghost: rgb(149, 55, 55);
 }
 
 body {

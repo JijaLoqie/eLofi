@@ -1,7 +1,6 @@
 import { ButtonProps } from './Button.props';
 import styles from './Button.module.css';
 import cn from 'classnames';
-import { useEffect } from 'react';
 
 export const Button = ({ appearance, children, className, ...props }: ButtonProps): JSX.Element => {
 	return (
