@@ -3,3 +3,41 @@
   align-self: flex-start;
   flex: 1 100%;
 }
+
+.timercontent {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+
+.timervalue {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 140px;
+  height: 140px;
+
+  border: 10px solid white;
+  border-radius: 50%;
+
+  font-size: 40px;
+}
+
+.timersettings > div {
+  display: flex;
+  align-items: center;
+
+  margin: auto;
+  padding: 10px;
+
+  justify-content: center;
+  background-color: #533f3f;
+  border-radius: 10%;
+
+  border: 1px solid white;
+}
+
+.timersettings > div > div {
+  padding: 10px;
+}

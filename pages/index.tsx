@@ -27,11 +27,12 @@ export default function Home() {
 	const addNewMusic = (songName: string, artist: string, music: { cover: string, song: string }) => {
 		setMusics((wasMusics) => [...wasMusics, { songName, artist, music }])
 	}
-
+	// close block
 	const handleGoBack = () => {
 		console.log("Go back");
 		setContentAppearance("normal");
 	};
+	// set random background
 	const handleBackground = () => {
 		const i = Math.floor(Math.random() * backs.length);
 		setBackground(backs[i]);
