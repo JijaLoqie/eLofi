@@ -6,5 +6,6 @@ export interface PanelProps extends DetailedHTMLProps<HTMLAttributes<HTMLDivElem
 	songList: { songName: string, artist: string, music: { cover: string, song: string } }[],
 	isHovered?: boolean;
 	handleBack: () => void;
+	handleUpdateBack: () => void;
 	handlers: { handleSetMusic: any }
 }

@@ -15,7 +15,7 @@
   justify-content: space-around;
 
   background-color: var(--primary);
-  color: var(--white);
+  color: var(--text);
   border-radius: 5vh;
 
   opacity: 0;
@@ -25,7 +25,8 @@
 }
 .panel:hover {
   width: 30vw;
-  min-width: 300px;
+  min-width: 400px;
+  justify-items: space-around;
 }
 .buttons {
   display: flex;

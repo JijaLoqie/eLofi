@@ -6,12 +6,12 @@
   padding-right: 10%;
   height: 80vh;
   top: 100vh;
-  background-color: black;
+  background-color: var(--primary);
   border-radius: 5vh;
 }
 
 .playlist {
-  color: black;
+  color: var(--primary);
   border-radius: 50px;
   background-color: white;
   margin: 0;

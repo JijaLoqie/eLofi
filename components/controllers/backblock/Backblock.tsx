@@ -2,9 +2,9 @@ import { BackblockProps } from './Backblock.props';
 import styles from './Backblock.module.css';
 import cn from 'classnames';
 import { useEffect, useState } from 'react';
-import { Htag } from '../..';
+import { Button, Htag } from '../..';
 
-export const Backblock = ({ className, ...props }: BackblockProps): JSX.Element => {
+export const Backblock = ({ className, handleRandomBack, ...props }: BackblockProps): JSX.Element => {
 	const [show, setShow] = useState(false)
 
   useEffect(() => {
@@ -20,8 +20,8 @@ export const Backblock = ({ className, ...props }: BackblockProps): JSX.Element 
 			<Htag tag="h1">
 				Set up background as you like
 			</Htag>
-			<div style={{ textAlign: `center` }}>
-				Here you can change the background
+			<div className={styles.backgroundsettings}>
+				<Button appearance='ghost' onClick={() => {handleRandomBack()}}>Random Update</Button>
 			</div>
 		</div>
 	);

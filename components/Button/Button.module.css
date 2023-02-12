@@ -10,7 +10,7 @@
 }
 
 .primary {
-  color: var(--white);
+  color: var(--text);
   background-color: var(--primary);
 }
 
@@ -19,7 +19,7 @@
 }
 
 .ghost {
-  color: var(--white);
+  color: var(--text);
   background-color: var(--primary);
 }
 

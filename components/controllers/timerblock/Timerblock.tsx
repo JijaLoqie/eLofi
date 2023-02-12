@@ -37,27 +37,37 @@ export const Timerblock = ({ className, ...props }: TimerblockProps): JSX.Elemen
 
   const updateTime = (operator: '-' | '+', value: number) => {
 	if (operator == '-') {
-		setTimeValue(timeVal => timeVal >= value ? timeVal - value : 0)
+		setTimeValue(timeVal => {
+			if (timeVal >= value) {
+				return timeVal - value;
+			} else {
+				setIsTicking(false);
+				return 0;
+			}
+		}
+			)
 	} else {
 		setTimeValue(timeVal => timeVal + value)
 	}
   }
 	const startTicking = () => {
-		if (!isTicking) {
+		if (!isTicking && timeValue != 0) {
 			console.log("Starting!")
 			setIsTicking(true);
 			const interval = setInterval(() => {
 				updateTime('-', 1);
-				if (timeValue == 0) {
-					setIsTicking(false);
-					clearInterval(tickingInterval)
-				}
 			}, 1000);
 			setTickingInterval(interval);
 		}
 	}
+	const stopTicking = () => {
+		if (isTicking) {
+			setIsTicking(false);
+		}
+	}
 	useEffect(() => {
-		if (!isTicking) {
+		if (!isTicking && tickingInterval != null) {
+			console.log("Stoping!!")
 			clearInterval(tickingInterval);
 		}
 	// eslint-disable-next-line react-hooks/exhaustive-deps
@@ -92,6 +102,9 @@ export const Timerblock = ({ className, ...props }: TimerblockProps): JSX.Elemen
 				<div className={styles.timerstart}>
 					<Button appearance='ghost' onClick={() => {startTicking()}}>
 						Start
+					</Button>
+					<Button appearance='ghost' onClick={() => {stopTicking()}}>
+						Stop
 					</Button>
 				</div>
 			</div>

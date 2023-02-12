@@ -42,14 +42,11 @@ export default function Home() {
 			handleGoBack();
 			return;
 		}
-		if (newAppearance == `background`) {
-			handleBackground();
-		}
 		setContentAppearance(newAppearance);
 	};
 	return (
 		<main style={{ backgroundImage: `url(/backs/${background})` }}>
-			<Panel songList={musics} appearance={contentAppearance} handleBack={handleGoBack} handlers={{ handleSetMusic: addNewMusic }}>
+			<Panel songList={musics} appearance={contentAppearance} handleUpdateBack={handleBackground} handleBack={handleGoBack} handlers={{ handleSetMusic: addNewMusic }}>
 				<Button appearance="primary" onClick={() => handleInfo("info")}>
 					eLofi
 				</Button>

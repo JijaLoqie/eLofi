@@ -3,3 +3,12 @@
   align-self: flex-start;
   flex: 1 100%;
 }
+
+.colorlist {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+.colorlist > div > input {
+  width: 100%;
+}

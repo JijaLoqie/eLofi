@@ -1,5 +1,22 @@
 .backblock {
-  display: inline;
+  display: flex;
+  flex-direction: column;
   align-self: flex-start;
-  flex: 1 100%;
+  justify-content: center;
+  justify-items: center;
+}
+.backblock > div {
+  margin: auto;
+}
+
+.backgroundsettings {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+
+  width: 140px;
+  height: 140px;
+
+  border: 10px solid white;
+  border-radius: 50%;
 }

@@ -14,6 +14,7 @@ export const Panel = ({
 	appearance,
 	songList,
 	handleBack,
+	handleUpdateBack,
 	handlers,
 	...props
 }: PanelProps): JSX.Element => {
@@ -62,7 +63,7 @@ export const Panel = ({
 				) : (appearance == "music") ? (
 					<Musicblock handleSetMusic={handlers.handleSetMusic} list={songList} />
 				) : (appearance == "background") ? (
-					<Backblock />
+					<Backblock handleRandomBack={() => {handleUpdateBack()}}/>
 				) : (appearance == "color") ? (
 					<Colorblock />
 				) : (appearance == "timer") ? (

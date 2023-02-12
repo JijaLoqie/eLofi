@@ -1,7 +1,7 @@
 :root {
   --primary: black;
   --primary-hover: rgb(149, 55, 55);
-  --white: white;
+  --text: white;
   --ghost-hover: black;
   --ghost: rgb(149, 55, 55);
 }
@@ -9,7 +9,7 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: black;
+  background-color: var(--primary);
 }
 
 main {
