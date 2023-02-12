@@ -20,6 +20,12 @@ export default function Home() {
 		setBacks((wasBacks) => [...wasBacks, "magician1.png"]);
 		setBacks((wasBacks) => [...wasBacks, "magician2.png"]);
 		setBacks((wasBacks) => [...wasBacks, "magician3.png"]);
+		setBacks((wasBacks) => [...wasBacks, "new_mag1.png"]);
+		setBacks((wasBacks) => [...wasBacks, "new_mag2.png"]);
+		setBacks((wasBacks) => [...wasBacks, "new_mag3.jpg"]);
+		setBacks((wasBacks) => [...wasBacks, "new_mag4.jpg"]);
+		setBacks((wasBacks) => [...wasBacks, "new_mag5.jpg"]);
+		setBacks((wasBacks) => [...wasBacks, "field.jpg"]);
 		addNewMusic("South", "HXVRMXN", { cover: "/songCovers/south.jpg", song: "/sounds/South.mp3" });
 		addNewMusic("Madara", "HXVRMXN", { cover: "/songCovers/free-flow-flava-madara.jpg", song: "/sounds/free-flow-flava-madara.mp3" });
 	}, []);
