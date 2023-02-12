@@ -1,6 +1,6 @@
 # eLofi
 
-## Welcome to place for `Studying and chilling` zone
+## Welcome to `Studying and chilling` zone
 
 Here you can manage your workspace as you like settings colors, backgrounds, musics and timers as you wish!
 
