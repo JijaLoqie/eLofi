@@ -25,6 +25,15 @@ In right corner you can see `Play` button, click on it and listen inspiring musi
 ![image](https://user-images.githubusercontent.com/43857227/218302638-3f47de45-4764-4804-b6ec-4d802006a1a3.png)
 
 -----
+### Launch
+
+0. Open terminal, go to the root of project
+1. `yarn` or `npm install`
+2. `yarn dev` or `npm run dev`
+3. *Using `yarn@^1.22.19` and `npm@^9.5.1`
+
+
+-----
 
 There is a several goals, which I am going to solve, to provide a really good place for `Studying and chilling`:
 - Fix music. It works only by clicking on the button `Play` in right corner. In main panel with music I have some bugs i'm going to fix)
